@@ -18,7 +18,10 @@ from preprocessor.util import Name2Proba
 
 __author__ = 'kensk8er'
 
-_DATA_ROOT = os.path.join(PACKAGE_ROOT, os.path.pardir, 'data')
+#_DATA_ROOT = os.path.join(PACKAGE_ROOT, os.path.pardir, 'data') # this did not work on ubuntu/windows
+_DATA_ROOT = os.path.join(PACKAGE_ROOT, 'data')
+
+
 _RAW_DATA_ROOT = os.path.join(_DATA_ROOT, 'raw')
 _PROCESSED_DATA_PATH = os.path.join(_DATA_ROOT, 'name2proba_{}.pkl')
 _NEUTRAL_NAME_AUGMENTATION_NUM = 100000
@@ -130,11 +133,13 @@ def main():
     name2proba = _process_us_stats(name2proba)
     _LOGGER.info('Processing Common Names...')
     name2proba = _process_common_names(name2proba)
-    _LOGGER.info('Augmenting Neutral Names...')
-    name2proba = _augment_full_names(name2proba, 'neutral')
-    _LOGGER.info('Augmenting Female Names...')
-    name2proba = _augment_full_names(name2proba, 'female')
-    _LOGGER.info('Saving to the pickle files...')
+    
+    # these require surname2proba.pkl
+    #_LOGGER.info('Augmenting Neutral Names...')
+    #name2proba = _augment_full_names(name2proba, 'neutral')  
+    #_LOGGER.info('Augmenting Female Names...')
+    #name2proba = _augment_full_names(name2proba, 'female')
+    #_LOGGER.info('Saving to the pickle files...')
 
     # randomly split into train/test set
     name2proba = dict(name2proba)
