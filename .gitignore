@@ -95,9 +95,6 @@ ENV/
 .DS_Store
 
 # Project sepecic
-data
-models
-profile_train.json
-profile_valid.json
+
 tensorboard
 
