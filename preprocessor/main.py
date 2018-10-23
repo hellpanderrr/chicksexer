@@ -18,8 +18,8 @@ from preprocessor.util import Name2Proba
 
 __author__ = 'kensk8er'
 
-#_DATA_ROOT = os.path.join(PACKAGE_ROOT, os.path.pardir, 'data') # this did not work on ubuntu/windows
-_DATA_ROOT = os.path.join(PACKAGE_ROOT, 'data')
+_DATA_ROOT = os.path.join(PACKAGE_ROOT, os.path.pardir, 'data') 
+#_DATA_ROOT = os.path.join(PACKAGE_ROOT, 'data')
 
 
 _RAW_DATA_ROOT = os.path.join(_DATA_ROOT, 'raw')
