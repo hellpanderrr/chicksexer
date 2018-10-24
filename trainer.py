@@ -46,7 +46,7 @@ import pickle
 import logging
 from collections import OrderedDict
 from random import choice
-
+from pathlib import Path
 import numpy as np
 from docopt import docopt
 from sklearn.model_selection import train_test_split
@@ -191,8 +191,9 @@ def _simple_train(names_train, names_valid, y_train, y_valid, args):
         'word_rnn_dropout': float(args['--word-rnn-dropout']),
     }
     model_name = _construct_model_name(parameters)
+    
     model_path = os.path.join(args['--model-dir'], model_name)
-
+    model_path = Path(model_path).resolve()
     _LOGGER.info('Initialize CharLSTM object with the new parameters...')
     model = CharLSTM(**parameters)
 

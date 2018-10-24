@@ -1,0 +1,2 @@
+model_checkpoint_path: "D:\\projects\\2\\models\\char_rnn_dropout-0.5_char_rnn_size-128_embedding_dropout-0._embedding_size-128_learning_rate-0.001_word_rnn_dropout-0._word_rnn_size-128\\model.ckpt"
+all_model_checkpoint_paths: "D:\\projects\\2\\models\\char_rnn_dropout-0.5_char_rnn_size-128_embedding_dropout-0._embedding_size-128_learning_rate-0.001_word_rnn_dropout-0._word_rnn_size-128\\model.ckpt"
