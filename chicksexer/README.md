@@ -37,7 +37,7 @@ and Ubuntu 14.04LTSx64 with Python 3.6.6 with the following libraries installed
 >
 >tensorflow==1.10.0
 
-**Model accuray**
+**Model accuracy**
 
                 precision    recall  f1-score   support
 
