@@ -37,6 +37,17 @@ and Ubuntu 14.04LTSx64 with Python 3.6.6 with the following libraries installed
 >
 >tensorflow==1.10.0
 
+**Model accuray**
+
+                precision    recall  f1-score   support
+
+      female        0.938     0.865     0.900      1733
+        male        0.986     0.961     0.973     10818
+     neutral        0.802     0.959     0.874      2074
+     
+     micro avg      0.949     0.949     0.949     14625
+     macro avg      0.909     0.928     0.916     14625
+     weighted avg   0.954     0.949     0.950     14625
 
 Installation
 ------------
