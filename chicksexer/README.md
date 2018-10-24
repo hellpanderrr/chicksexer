@@ -1,55 +1,42 @@
 chicksexer - Python package for gender classification
 =================================================================
 
-![Chicksexer](images/chicksexer.jpg?raw=true "Title")
-
 `chicksexer` is a Python package that performs **gender classification**. It receives a string of person name and returns the probability estimate of its gender as follows:
 
-```python
->>> from chicksexer import predict_gender
->>> predict_gender('John Smith')
-{'female': 0.0027230381965637207, 'male': 0.9972769618034363}
-```
+This is a version of it that has the required gender data and includes a trained model. 
+It was tested on Windows 7x64 with Python 3.6.2 with the following libraries installed
+> docopt==0.6.2
+>
+> numpy==1.15.3
+>
+> regex==2018.8.29
+>
+> scikit-learn==0.20.0
+>
+> scipy==1.1.0
+>
+> tensorboard==1.11.0
+>
+> tensorflow==1.11.0
+>
+> tensorflow-gpu==1.11.0
 
-Several merits of using the classifier instead of simply looking up known male/female names are:
 
-* Sometimes simple name lookup does not work. For instance, "Miki" is a Japanese female name, but also a Croatian male name.
-* Can predict the gender of a name that does not exist in the list of male/female names.
-* Can deal with a typo in a name relatively easily.
+and Ubuntu 14.04LTSx64 with Python 3.6.6 with the following libraries installed
+>docopt==0.6.2
+>
+>numpy==1.15.3
+>
+>regex==2018.8.29
+>
+>scikit-learn==0.20.0
+>
+>scipy==1.1.0
+>
+>tensorboard==1.10.0
+>
+>tensorflow==1.10.0
 
-You can also get an estimate as a simple string as follows:
-
-```python
->>> predict_gender('Oliver Butterfield', return_proba=False)
-'male'
->>> predict_gender('Naila Ata', return_proba=False)
-'female'
->>> predict_gender('Saldivar Anderson', return_proba=False)
-'neutral'
->>> predict_gender('Ponyo', return_proba=False)  # name of a character from the film
-'male'
->>> predict_gender('Ponya', return_proba=False)  # modify the name such that it sounds like a female name
-'female'
->>> predict_gender('Miki Suzuki', return_proba=True)  # Suzuki here is a Japanese surname so Miki is a female name
-{'female': 0.9997618066990981, 'male': 0.00023819330090191215}
->>> predict_gender('Miki Adamić', return_proba=True)  # Adamić is a Croatian surname so Miki is a male name
-{'female': 0.16958969831466675, 'male': 0.8304103016853333}
->>> predict_gender('Jessica')
-{'female': 0.999996105068476, 'male': 3.894931523973355e-06}
->>> predict_gender('Jesssica')  # typo in Jessica
-{'female': 0.9999851534785194, 'male': 1.4846521480649244e-05}
-```
-
-If you want to predict the gender of multiple names, use `predict_genders` (plural) function instead:
-
-```python
->>> from chicksexer import predict_genders
->>> predict_genders(['Ichiro Suzuki', 'Haruki Murakami'])
-[{'female': 3.039836883544922e-05, 'male': 0.9999696016311646},
- {'female': 1.2040138244628906e-05, 'male': 0.9999879598617554}]
->>> predict_genders(['Ichiro Suzuki', 'Haruki Murakami'], return_proba=False)
-['male', 'male']
-```
 
 Installation
 ------------
